@@ -7,18 +7,15 @@
         <meta name="descipcion" content="Certificado medico">
         <meta name = "keywords" content="from,text,html">
         <title>Certificado Medico</title>
+    <script src="script.js"></script>
 
- <style>
-        #canvas{
-            width: 500px;height: 350px;border: 5px;
-        }
-    </style>
     </head>
     <body>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="datos.js"></script>
         <h1>Datos del paciente</h1>
-        <form action ="" style="background-color: bisque;display: block;border-style: solid;width: 250px;height: 500px;padding: 10px; border-radius: 10%;">
+        <label>(Ingregar datos sin unidad de medicion)</label>
+            <form action ="" style="background-color: bisque;display: block;border-style: solid;width: 250px;height: 500px;padding: 10px; border-radius: 10%;">
             <div>
                 <label for "nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre">
@@ -121,20 +118,17 @@
 
             <div>
                 <input type="button" value="Crear Receta" onclick="certificado()">
-                <input type="button" id = "btn_descargar" value="Descargar" disabled onclick="window.location.href='https://phantom.app/ul/v1/signAndSendTransaction';"  >
-
-                <br><br><br><br><br>
-            </div>
-
-            <div id="respuesta">
-                <label for "respuesta">Res</label>
+                <input type="button" id = "btn_descargar" value="Descargar" disabled onclick="certificado()"  ><!-- window.location.href='https://phantom.app/ul/v1/signAndSendTransaction';-->
 
             </div>
             
         </form>
-    
-
+        <div id="respuesta">
+        <label for "respuesta"></label>
+        </div>
+        
     </body>
+    
     </body>
 
 </html>
