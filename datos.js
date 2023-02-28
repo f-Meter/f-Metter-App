@@ -43,18 +43,33 @@ function certificado(){
     var  dosis = estandar *peso*lapso*presentacion/24000;
     console.log("Dosis:"+dosis);
 
-    var cer = "Receta:\n"
-    +"Dr:\nMedico Especializado\nCedula profesional:\nDatos del paciente\n"+
-    "Nombre: "+nombre+" Edad: "+edad+"\n"+
-    "Sexo: "+sexo+" Fecha: "+fecha+"\n"+
-    "FC: "+fc+" FR: "+fr+" Tc: "+tc+" Peso: "+peso+" Talla: "+talla+" TA: "+ta+"\n"+
-    "Glucosa: "+glucosa+" SpO2: "+spo2+" Alergias: "+alergias+"\n"+
-    "Dx: "+dx +"\n"+
-    "Tratamiento:"+"\n"+
-    medicamento+" "+presentacion+" "+"via oral"+", "+dosis+" cada "+lapso+"hrs por "+dias+" dias\n"+
-    "Notas:"+"\n"+
-    nota;
-    document.getElementById("respuesta").innerHTML=cer;
     document.getElementById("btn_descargar").disabled = false;
 
+    var can = document.getElementById("micanvas")
+    var ctx = can.getContext("2d")
+    can.height = 900;
+    ctx.font="20px Georgia";
+    ctx.fillStyle="white"
+    ctx.fillRect(0,0,micanvas.width,micanvas.height);
+    ctx.fillStyle = "black";
+    ctx.fillText("Receta:",10,0)
+    ctx.fillText("Dr:",10,40)
+    ctx.fillText("Medico Especializado",10,80)
+    ctx.fillText("Cedula profesional:",10,120)
+    ctx.fillText("Datos del paciente:",10,160)
+    ctx.fillText("Nombre: "+nombre+" Edad: "+edad,10,200)
+    ctx.fillText("Sexo: "+sexo+" Fecha: "+fecha,10,240)
+    ctx.fillText("FC: "+fc+" FR: "+fr+" Tc: "+tc+" Peso: "+peso+" Talla: "+talla+" TA: "+ta,10,280)
+    ctx.fillText("Glucosa: "+glucosa+" SpO2: "+spo2+" Alergias: "+alergias,10,320)
+    ctx.fillText("Dx: "+dx ,10,360)
+    ctx.fillText("Tratamiento:",10,500)
+    ctx.fillText(medicamento+" "+presentacion+" "+"via oral"+", "+dosis+" cada "+lapso+"hrs por "+dias+" dias",10,540)
+    ctx.fillText("Notas:",10,580)
+    ctx.fillText(nota,10,620)
+
+
+
+console.log("colocar");
+
 }
+

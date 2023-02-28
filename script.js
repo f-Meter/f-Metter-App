@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Escuchamos el click del botón
     const $boton = document.querySelector("#btn_descargar");
     $boton.addEventListener("click", () => {
-        const $elementoParaConvertir = document.getElementById("respuesta");; // <-- Aquí puedes elegir cualquier elemento del DOM
+        const $elementoParaConvertir = document.getElementById("micanvas");; // <-- Aquí puedes elegir cualquier elemento del DOM
         html2pdf()
             .set({
                 margin: 1,
@@ -25,5 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
             .from($elementoParaConvertir)
             .save()
             .catch(err => console.log(err));
+
+            const $canvas = document.querySelector("#micanvas")
+            // Lo siguiente dibuja en el canvas, no tiene que ver con el tutorial, solo es demostración
+            const contexto = $canvas.getContext("2d");
+        let enlace = document.createElement('a');
+        // El título
+        enlace.download = "Certificado.jpg";
+        // Convertir la imagen a Base64 y ponerlo en el enlace
+        enlace.href = micanvas.toDataURL("image/jpeg", 1);
+        // Hacer click en él
+        enlace.click();
+    
     });
 });

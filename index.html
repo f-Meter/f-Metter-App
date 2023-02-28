@@ -11,10 +11,13 @@
 
     </head>
     <body>
+    <script src="jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="datos.js"></script>
+
         <h1>Datos del paciente</h1>
         <label>(Ingresar datos sin unidad de medicion)</label>
+
             <form action ="" style="background-color: bisque;display: block;border-style: solid;width: 250px;height: 500px;padding: 10px; border-radius: 10%;">
             <div>
                 <label for "nombre">Nombre</label>
@@ -118,14 +121,12 @@
 
             <div>
                 <input type="button" value="Crear Receta" onclick="certificado()">
-                <input type="button" id = "btn_descargar" value="Descargar" disabled onclick="certificado()"  ><!-- window.location.href='https://phantom.app/ul/v1/signAndSendTransaction';-->
+                <input type="button" id = "btn_descargar" value="Descargar" disabled   ><!-- window.location.href='https://phantom.app/ul/v1/signAndSendTransaction';-->
 
             </div>
             
         </form>
-        <div id="respuesta">
-        <label for "respuesta"></label>
-        </div>
+        <canvas id="micanvas" width="500" height="300" style="border:1px" solid #000000;></canvas>
         
     </body>
     
