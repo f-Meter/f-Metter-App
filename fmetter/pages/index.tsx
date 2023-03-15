@@ -37,7 +37,6 @@ const Home: NextPage = () => {
       console.error("Couldn't fetch user trasnactions", e)
     }
   }
-  const url =<a href='http://localhost/script/'>Play</a>
   
   const createFile = () => {
 
